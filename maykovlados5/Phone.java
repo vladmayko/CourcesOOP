@@ -39,13 +39,12 @@ public class Phone {
     }
 
 
-
     public void incomingCall(String fromPhoneNumber){
         System.out.println("Incoming call to " + this.getPhoneNumber() + " from " + fromPhoneNumber);
     }
 
     public void outgoingCall(Network network, String toPhoneNumber){
-        if (network.call(this, toPhoneNumber)) System.out.println("Outcoming call from " + this.phoneNumber + " to " + toPhoneNumber);;
+        if (network.call(this, toPhoneNumber)) System.out.println("Outcoming call from " + this.phoneNumber + " to " + toPhoneNumber);
     }
 
     public void registration(Network network){
