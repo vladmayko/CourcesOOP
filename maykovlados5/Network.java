@@ -30,7 +30,7 @@ public class Network {
 
     public void addPhone(Phone phone){
         if (this.findNumber(phone.getPhoneNumber())) {
-            System.out.println("Number was registered earlier.");
+            System.out.println("Number " + phone.getPhoneNumber() + " was registered earlier.");
         }else {
             this.phoneSet.add(phone);
             System.out.println("Number " + phone.getPhoneNumber() + " registered.");
