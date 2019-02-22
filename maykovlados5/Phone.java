@@ -1,6 +1,5 @@
 package com.gmail.maykovlados5;
 
-
 public class Phone {
     private String phoneNumber;
     private String model;
@@ -39,29 +38,18 @@ public class Phone {
         this.phoneNumber = phoneNumber;
     }
 
-    public void callTo(String phoneNumber) {
-        if (Network.findNumber(phoneNumber) && Network.findNumber(this.phoneNumber)) {
 
-            if (!this.phoneNumber.equals(phoneNumber)) {
-                System.out.println("Outcoming call from " + this.phoneNumber + " to " + phoneNumber);
-                System.out.println(incomingCall(this.phoneNumber, phoneNumber));
-            } else System.out.println("You can't to call yourself");
 
-        } else if (!Network.findNumber(phoneNumber) && !Network.findNumber(this.phoneNumber)) {
-            System.out.println("Unreal operation!");
-        } else if (!Network.findNumber(phoneNumber)) {
-            System.out.println("You can't call to '" + phoneNumber + "', it's no registered number!");
-        } else if (!Network.findNumber(this.phoneNumber)) {
-            System.out.println("Your number '" + this.phoneNumber + "' is no registered! You can't to call anybody!");
-        }
+    public void incomingCall(String fromPhoneNumber){
+        System.out.println("Incoming call to " + this.getPhoneNumber() + " from " + fromPhoneNumber);
     }
 
-    private static String incomingCall(String fromPhoneNumber, String toPhoneNumber ){
-            return "Incoming call to " + toPhoneNumber + " from " + fromPhoneNumber;
+    public void outgoingCall(Network network, String toPhoneNumber){
+        if (network.call(this, toPhoneNumber)) System.out.println("Outcoming call from " + this.phoneNumber + " to " + toPhoneNumber);;
     }
 
-    public void registration(){
-       Network.addNumber(this.phoneNumber) ;
+    public void registration(Network network){
+        network.addPhone(this); ;
     }
 
     @Override
@@ -70,7 +58,6 @@ public class Phone {
                 "phoneNumber='" + phoneNumber + '\'' +
                 ", model='" + model + '\'' +
                 ", imei='" + imei + '\'' +
-                ", registered='" + Network.findNumber(this.phoneNumber) + '\'' +
                 '}';
     }
 }
