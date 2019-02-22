@@ -22,6 +22,8 @@ public class Main {
         phoneOne.outсomingCall(network, "0677875464");
         System.out.println();
 
+        phoneOne.incomingCall(phoneTwo.getPhoneNumber());
+
         phoneOne.outсomingCall(network, "09763646434");
     }
 }
