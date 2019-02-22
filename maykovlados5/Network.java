@@ -44,7 +44,7 @@ public class Network {
         return false;
     }
 
-    public boolean call(Phone phoneOutgoingCall, String number){
+    public boolean call(Phone phoneOutсoingCall, String number){
         Phone phoneIncomingCall = null;
         for (Phone phone : this.phoneSet) {
             if (phone.getPhoneNumber().equals(number)){
@@ -52,19 +52,19 @@ public class Network {
                 break;
             }
         }
-        if (!this.findNumber(phoneOutgoingCall.getPhoneNumber())){
-            System.out.println("Your number '" + phoneOutgoingCall.getPhoneNumber() + "' is no registered! You can't to call anybody!");
+        if (!this.findNumber(phoneOutсoingCall.getPhoneNumber())){
+            System.out.println("Your number '" + phoneOutсoingCall.getPhoneNumber() + "' is no registered! You can't to call anybody!");
             return false;
         }
         if (!this.findNumber(number)){
             System.out.println("You can't call to '" + number + "', it's no registered number!");
             return false;
         }
-        if (number.equals(phoneOutgoingCall.getPhoneNumber())){
+        if (number.equals(phoneOutсoingCall.getPhoneNumber())){
             System.out.println("You can't to call yourself");
             return false;
         }
-        phoneIncomingCall.incomingCall(phoneOutgoingCall.getPhoneNumber());
+        phoneIncomingCall.incomingCall(phoneOutсoingCall.getPhoneNumber());
         return true;
     }
 }

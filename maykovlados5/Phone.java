@@ -43,7 +43,7 @@ public class Phone {
         System.out.println("Incoming call to " + this.getPhoneNumber() + " from " + fromPhoneNumber);
     }
 
-    public void outgoingCall(Network network, String toPhoneNumber){
+    public void outсomingCall(Network network, String toPhoneNumber){
         if (network.call(this, toPhoneNumber)) System.out.println("Outcoming call from " + this.phoneNumber + " to " + toPhoneNumber);
     }
 
