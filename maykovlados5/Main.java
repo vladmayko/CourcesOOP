@@ -21,7 +21,7 @@ public class Main {
         phoneOne.registration(network);
         phoneOne.outсomingCall(network, "0677875464");
         System.out.println();
-        
+
 
         phoneOne.outсomingCall(network, "09763646434");
     }

@@ -1,12 +1,16 @@
 package com.gmail.maykovlados5;
 
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 public class Network {
     private String name;
-    private Set<Phone> phoneSet = new HashSet<>();
+    private List<Phone> phoneSet = new ArrayList<>();
+
+
 
     public Network(String name) {
         this.name = name;
@@ -20,11 +24,11 @@ public class Network {
         this.name = name;
     }
 
-    public Set<Phone> getPhoneSet() {
-        return this.phoneSet;
+    public List<Phone> getPhoneSet() {
+        return phoneSet;
     }
 
-    public void setPhoneSet(Set<Phone> phoneSet) {
+    public void setPhoneSet(List<Phone> phoneSet) {
         this.phoneSet = phoneSet;
     }
 
