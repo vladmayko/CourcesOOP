@@ -1,5 +1,6 @@
 package hometask4;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.HashSet;
@@ -58,6 +59,22 @@ public class Start {
         group.sortByParametr(CriteriumOfSorting.AGE);
         System.out.println(group + System.lineSeparator());
 
-        System.out.println(Arrays.toString(group.guysOverEighteen()));
+        System.out.println(Arrays.toString(group.guysOverEighteen()) + System.lineSeparator());
+
+        File fileGroup = new File("group.txt");
+        try {
+            WriteRead.saveGroupToFile(fileGroup, group);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        Group groupTest = null;
+        try {
+            groupTest = (Group) WriteRead.loadGroupFromFile(fileGroup);
+        } catch (IOException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        System.out.println(groupTest);
     }
 }

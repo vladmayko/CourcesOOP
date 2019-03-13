@@ -5,6 +5,7 @@ import hometask4.Voencom;
 
 import javax.swing.*;
 import java.io.IOException;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,7 +13,8 @@ import java.util.List;
 /**
  * Created by MacUser on 25.02.19.
  */
-public class Group implements Voencom{
+public class Group implements Voencom, Serializable{
+    private static final long serialVersionUID = 1L;
     private List<Student> students = new ArrayList<>();
 
     public Group() {
@@ -109,6 +111,8 @@ public class Group implements Voencom{
         }
         return studentsRecruit;
     }
+
+
 
     @Override
     public String toString() {
