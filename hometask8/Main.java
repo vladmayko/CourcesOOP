@@ -12,15 +12,14 @@ public class Main {
         Stack stack = new Stack(bl);
 
         stack.push(6);
-        stack.push("String");
+        Scanner scanner = new Scanner(System.in);
+        stack.push(scanner);
         System.out.println(stack.toString());
 
         stack.push(3.8);
         stack.push(true);
 
-        Scanner scanner = new Scanner(System.in);
-
-        stack.push(scanner);
+        stack.push("String");
         stack.push('r');
         System.out.println(stack.toString());
 

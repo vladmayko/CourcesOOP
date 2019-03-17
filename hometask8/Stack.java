@@ -19,13 +19,13 @@ public class Stack {
     }
 
     public void push(Object obj){
-        if(blackList == null || !blackList.checkBlackList(obj)) {
+        if(!blackList.checkBlackList(obj)) {
+
             if (count != array.length) {
                 array[count++] = obj;
                 System.out.println("Push object [" + obj + "] to stack.");
-            } else {
-                System.out.println("Can't push [" + obj + "]. Stack is full already!");
-            }
+            } else System.out.println("Can't push [" + obj + "]. Stack is full already!");
+
         } else System.out.println("Error: class of the object you are adding is blacklisted.");
     }
 
