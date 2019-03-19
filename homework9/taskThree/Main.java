@@ -8,6 +8,6 @@ import java.io.*;
 public class Main {
     public static void main(String[] args) {
         File file = new File("text.txt");
-        Reader.getStatistic(file);
+        Statistic.getStatistic(file);
     }
 }

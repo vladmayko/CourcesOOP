@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
 /**
  * Created by MacUser on 19.03.19.
  */
-public class Reader {
+public class Statistic {
     private static String getStringFromFile(File file) throws IOException {
         String result = "";
         try(BufferedReader bf = new BufferedReader(new FileReader(file))){
@@ -39,7 +39,7 @@ public class Reader {
         Map<Character, Double>  map = new HashMap<>();
         String text = "";
         try {
-            text = Reader.getStringFromFile(file);
+            text = Statistic.getStringFromFile(file);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -56,6 +56,10 @@ public class Reader {
                 map.put(letter, Math.round(count/globalCount * 10000)/ 10000.0d);
             }
         }
+        sortMap(map);
+    }
+
+    private static void sortMap(Map<Character, Double>  map){
         LinkedHashMap<Character, Double> data =
                 map.entrySet().stream().
                         sorted(Map.Entry.comparingByValue(Comparator.reverseOrder())).
