@@ -69,5 +69,6 @@ public class Statistic {
         for (Map.Entry<Character, Double> d: data.entrySet()) {
             System.out.println(d.getKey() + " - " + d.getValue());
         }
+        data.forEach((key, value) -> System.out.println(key + " - " + value + "%"));
     }
 }
