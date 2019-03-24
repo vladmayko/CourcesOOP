@@ -76,5 +76,13 @@ public class Start {
         }
 
         System.out.println(groupTest);
+
+        /*
+        Stream API
+         */
+
+        System.out.println(group.firstLetterSearching('N'));
+
+
     }
 }

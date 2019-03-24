@@ -65,10 +65,6 @@ public class Statistic {
                         sorted(Map.Entry.comparingByValue(Comparator.reverseOrder())).
                         collect(Collectors.toMap(Map.Entry:: getKey, Map.Entry::getValue,
                                 (e1,e2) -> e2, LinkedHashMap::new));
-
-        for (Map.Entry<Character, Double> d: data.entrySet()) {
-            System.out.println(d.getKey() + " - " + d.getValue());
-        }
         data.forEach((key, value) -> System.out.println(key + " - " + value + "%"));
     }
 }

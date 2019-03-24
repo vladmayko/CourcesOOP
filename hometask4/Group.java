@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 
 /**
@@ -110,6 +111,17 @@ public class Group implements Voencom, Serializable{
             studentsRecruit[i] = sr.get(i);
         }
         return studentsRecruit;
+    }
+
+    /**
+     * Stream API, task 1
+     */
+
+    public List<Student> firstLetterSearching(char letter){
+        List<Student> letterList = students.stream()
+                .filter(s -> s.getSurname().indexOf(letter) == 0)
+                .collect(Collectors.toCollection(ArrayList:: new));
+        return letterList;
     }
 
 
