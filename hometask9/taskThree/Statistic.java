@@ -1,4 +1,4 @@
-package homework9.taskThree;
+package hometask9.taskThree;
 
 import java.io.BufferedReader;
 import java.io.File;
