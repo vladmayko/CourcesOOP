@@ -1,6 +1,7 @@
 package hometask10.taskThree;
 
 import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by MacUser on 28.03.19.
@@ -13,8 +14,8 @@ public class RepeatingInArray {
         System.out.println(repeatedElements(arrayStr));
     }
 
-    public static <T> HashMap<T,Integer> repeatedElements(T[] array){
-        HashMap<T, Integer> listRepeater = new HashMap<>();
+    public static <T> Map<T,Integer> repeatedElements(T[] array){
+        Map<T, Integer> listRepeater = new HashMap<>();
         for (T key:array) {
             listRepeater.put(key, (!listRepeater.containsKey(key) ? 1 : listRepeater.get(key) + 1));
         }
